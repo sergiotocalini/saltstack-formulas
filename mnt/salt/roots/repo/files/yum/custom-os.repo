@@ -1,0 +1,11 @@
+[custom-os-$basearch]
+name=RHEL $osversion - OS ($basearch)
+baseurl=http://pub.example.com/redhat/os/$osversion/$basearch/
+enabled=1
+gpgcheck=0
+
+[custom-os-noarch]
+name=RHEL $osversion - OS (noarch)
+baseurl=http://pub.example.com/redhat/os/$osversion/noarch/
+enabled=1
+gpgcheck=0

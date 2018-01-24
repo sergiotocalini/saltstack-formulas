@@ -1,0 +1,23 @@
+[custom-extras-$basearch]
+name=RHEL $osversion - Extras ($basearch)
+baseurl=http://pub.example.com/redhat/extras/$osversion/$basearch/
+enabled=1
+gpgcheck=0
+
+[custom-extras-noarch]
+name=RHEL $osversion - Extras (noarch)
+baseurl=http://pub.example.com/redhat/extras/$osversion/noarch/
+enabled=1
+gpgcheck=0
+
+[custom-extras-$basearch-nover]
+name=RHEL # - Extras (noarch)
+baseurl=http://pub.example.com/redhat/extras/nover/$basearch/
+enabled=1
+gpgcheck=0
+
+[custom-extras-noarch-nover]
+name=RHEL # - Extras (noarch)
+baseurl=http://pub.example.com/redhat/extras/nover/noarch/
+enabled=1
+gpgcheck=0

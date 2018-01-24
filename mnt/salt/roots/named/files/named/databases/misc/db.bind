@@ -1,0 +1,11 @@
+$TTL 1D
+$ORIGIN bind.
+@ CHAOS SOA localhost. root.localhost. (
+                   2007052501 ; serial
+                   1d ; refresh
+                   2h ; retry
+                   7W ; expiry
+                   2H ) ; negative TTL
+@ CHAOS NS localhost.
+version.bind.   CHAOS  TXT "Hamsters on Wheels v II"
+authors.bind.   CHAOS  TXT "Go ask your mother"

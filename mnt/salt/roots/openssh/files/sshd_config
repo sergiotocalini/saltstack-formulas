@@ -1,0 +1,40 @@
+HostKey					/etc/ssh/ssh_host_rsa_key
+HostKey					/etc/ssh/ssh_host_ecdsa_key
+HostKey					/etc/ssh/ssh_host_ed25519_key
+
+Port					22
+Protocol				2
+
+# Logging
+SyslogFacility				AUTHPRIV
+LogLevel                        	ERROR
+
+# Authentication
+LoginGraceTime                  	2m
+PermitRootLogin				without-password
+StrictModes				yes
+MaxAuthTries				9
+RSAAuthentication			yes
+PubkeyAuthentication			yes
+AuthorizedKeysFile			/etc/ssh/auth/%u
+AuthorizedKeysCommand			/mnt/scripts/ldapkeys/ldapkeys.sh
+AuthorizedKeysCommandUser		nobody
+PermitEmptyPasswords			no
+PasswordAuthentication			yes
+ChallengeResponseAuthentication		no
+
+# GSSAPI options
+GSSAPIAuthentication			yes
+GSSAPICleanupCredentials		no
+
+UsePAM					yes
+
+# Accept locale-related environment variables
+AcceptEnv				LANG LC_CTYPE LC_NUMERIC LC_TIME LC_COLLATE LC_MONETARY LC_MESSAGES
+AcceptEnv				LC_PAPER LC_NAME LC_ADDRESS LC_TELEPHONE LC_MEASUREMENT
+AcceptEnv				LC_IDENTIFICATION LC_ALL LANGUAGE
+AcceptEnv				XMODIFIERS
+
+X11Forwarding				yes
+Banner					/etc/issue.net
+Subsystem sftp				/usr/libexec/openssh/sftp-server
